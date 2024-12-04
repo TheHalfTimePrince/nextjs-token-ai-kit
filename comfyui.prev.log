@@ -1,0 +1,31 @@
+## ComfyUI-Manager: installing dependencies done.
+[2024-11-10 22:09:57.789] ** ComfyUI startup time: 2024-11-10 22:09:57.789966
+[2024-11-10 22:09:57.867] ** Platform: Windows
+[2024-11-10 22:09:57.868] ** Python version: 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)]
+[2024-11-10 22:09:57.868] ** Python executable: C:\Users\Ziggy\AppData\Local\Programs\Python\Python310\python.exe
+[2024-11-10 22:09:57.868] ** ComfyUI Path: d:\ai-starter\stable-diffusion\ComfyUI
+[2024-11-10 22:09:57.868] ** Log path: d:\ai-starter\comfyui.log
+[2024-11-10 22:09:57.885] 
+Prestartup times for custom nodes:
+[2024-11-10 22:09:57.885]    4.0 seconds: D:\ai-starter\stable-diffusion\ComfyUI\custom_nodes\ComfyUI-Manager
+[2024-11-10 22:09:57.886] 
+Traceback (most recent call last):
+[2024-11-10 22:10:02.394]   File "d:\ai-starter\stable-diffusion\ComfyUI\main.py", line 90, in <module>
+[2024-11-10 22:10:02.395]     import execution
+[2024-11-10 22:10:02.395]   File "d:\ai-starter\stable-diffusion\ComfyUI\execution.py", line 13, in <module>
+[2024-11-10 22:10:02.395]     import nodes
+[2024-11-10 22:10:02.395]   File "d:\ai-starter\stable-diffusion\ComfyUI\nodes.py", line 21, in <module>
+[2024-11-10 22:10:02.395]     import comfy.diffusers_load
+[2024-11-10 22:10:02.396]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\diffusers_load.py", line 3, in <module>
+[2024-11-10 22:10:02.396]     import comfy.sd
+[2024-11-10 22:10:02.396]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\sd.py", line 5, in <module>
+[2024-11-10 22:10:02.403]     from comfy import model_management
+[2024-11-10 22:10:02.404]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\model_management.py", line 143, in <module>
+[2024-11-10 22:10:02.404]     total_vram = get_total_memory(get_torch_device()) / (1024 * 1024)
+[2024-11-10 22:10:02.405]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\model_management.py", line 112, in get_torch_device
+[2024-11-10 22:10:02.405]     return torch.device(torch.cuda.current_device())
+[2024-11-10 22:10:02.405]   File "C:\Users\Ziggy\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\cuda\__init__.py", line 674, in current_device
+[2024-11-10 22:10:02.405]     _lazy_init()
+[2024-11-10 22:10:02.405]   File "C:\Users\Ziggy\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\cuda\__init__.py", line 239, in _lazy_init
+[2024-11-10 22:10:02.406]     raise AssertionError("Torch not compiled with CUDA enabled")
+[2024-11-10 22:10:02.406] AssertionError: Torch not compiled with CUDA enabled

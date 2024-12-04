@@ -13,7 +13,15 @@ const nextConfig: NextConfig = {
     ppr: false,
     serverSourceMaps: false
   },
-  productionBrowserSourceMaps: false, 
+  productionBrowserSourceMaps: false,
+  async rewrites() {
+    return [
+      {
+        source: '/api/ai-apis/:path*',
+        destination: 'http://localhost:8000/:path*', // Proxy to FastAPI within Docker network
+      },
+    ]
+  },
 };
 
 export default withMDX(nextConfig);

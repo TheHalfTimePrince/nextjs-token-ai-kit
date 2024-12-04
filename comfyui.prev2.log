@@ -1,0 +1,26 @@
+## ComfyUI-Manager: installing dependencies. (GitPython)
+[2024-11-10 21:57:51.933] ## ComfyUI-Manager: installing dependencies done.
+[2024-11-10 21:57:51.933] ** ComfyUI startup time: 2024-11-10 21:57:51.933702
+[2024-11-10 21:57:52.016] ** Platform: Windows
+[2024-11-10 21:57:52.017] ** Python version: 3.10.6 (tags/v3.10.6:9c7b4bd, Aug  1 2022, 21:53:49) [MSC v.1932 64 bit (AMD64)]
+[2024-11-10 21:57:52.017] ** Python executable: C:\Users\Ziggy\AppData\Local\Programs\Python\Python310\python.exe
+[2024-11-10 21:57:52.017] ** ComfyUI Path: d:\ai-starter\stable-diffusion\ComfyUI
+[2024-11-10 21:57:52.017] ** Log path: d:\ai-starter\comfyui.log
+[2024-11-10 21:57:52.033] 
+Prestartup times for custom nodes:
+[2024-11-10 21:57:52.034]  104.8 seconds: D:\ai-starter\stable-diffusion\ComfyUI\custom_nodes\ComfyUI-Manager
+[2024-11-10 21:57:52.034] 
+Traceback (most recent call last):
+[2024-11-10 21:58:00.586]   File "d:\ai-starter\stable-diffusion\ComfyUI\main.py", line 90, in <module>
+[2024-11-10 21:58:00.586]     import execution
+[2024-11-10 21:58:00.586]   File "d:\ai-starter\stable-diffusion\ComfyUI\execution.py", line 13, in <module>
+[2024-11-10 21:58:00.586]     import nodes
+[2024-11-10 21:58:00.587]   File "d:\ai-starter\stable-diffusion\ComfyUI\nodes.py", line 21, in <module>
+[2024-11-10 21:58:00.587]     import comfy.diffusers_load
+[2024-11-10 21:58:00.587]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\diffusers_load.py", line 3, in <module>
+[2024-11-10 21:58:00.587]     import comfy.sd
+[2024-11-10 21:58:00.588]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\sd.py", line 5, in <module>
+[2024-11-10 21:58:00.588]     from comfy import model_management
+[2024-11-10 21:58:00.588]   File "d:\ai-starter\stable-diffusion\ComfyUI\comfy\model_management.py", line 19, in <module>
+[2024-11-10 21:58:00.588]     import psutil
+[2024-11-10 21:58:00.589] ModuleNotFoundError: No module named 'psutil'

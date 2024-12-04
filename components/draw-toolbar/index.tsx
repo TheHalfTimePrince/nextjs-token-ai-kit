@@ -180,17 +180,28 @@ export const DrawToolbar = ({
   };
 
   const downloadCanvas = () => {
-    const dataURL = canvas.toDataURL({
-      format: "png",
-      quality: 1,
-    });
+    const tempCanvas = document.createElement("canvas");
+    tempCanvas.width = 1024;
+    tempCanvas.height = 1024;
+    const tempCtx = tempCanvas.getContext("2d");
 
-    const link = document.createElement("a");
-    link.download = "drawing.png";
-    link.href = dataURL;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    if (tempCtx) {
+      // Fill the background with white
+      tempCtx.fillStyle = "white";
+      tempCtx.fillRect(0, 0, tempCanvas.width, tempCanvas.height);
+
+      // Draw the current canvas content onto the temporary canvas
+      tempCtx.drawImage(canvas.getElement(), 0, 0, tempCanvas.width, tempCanvas.height);
+
+      const dataURL = tempCanvas.toDataURL("image/png");
+
+      const link = document.createElement("a");
+      link.download = "drawing.png";
+      link.href = dataURL;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   // Enable selection mode (disable drawing)

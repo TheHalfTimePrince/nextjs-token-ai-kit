@@ -54,11 +54,11 @@ export const Canvas = React.forwardRef<
       )}
       <div
         className={`${
-          isOpen ? "fixed inset-0 p-16 bg-black/50 z-[1000]" : "relative"
+          isOpen ? "fixed inset-0 p-2 lg:p-16 bg-black/50 z-[1000]" : "relative"
         }  flex w-full h-full items-center justify-center `}
       >
         <div
-          className="relative rounded-xl w-full h-full aspect-square "
+          className="relative rounded-xl w-full max-h-fit lg:h-full lg:max-w-fit aspect-square "
           ref={canvasParentRef}
         >
           <canvas

@@ -1,0 +1,41 @@
+# @/app/api/ai-apis/Dockerfile
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app/api/ai-apis
+
+RUN apt-get update && apt-get install -y \
+    git \
+    libgl1-mesa-glx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install dependencies
+COPY ./app/api/ai-apis/requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy the ComfyUI and custom nodes into the container
+COPY ../../../stable-diffusion/ComfyUI /app/api/ai-apis/stable-diffusion/ComfyUI
+
+
+# Change to ComfyUI directory and install Python dependencies
+WORKDIR /app/api/ai-apis/stable-diffusion/ComfyUI
+
+# Install ComfyUI dependencies
+RUN pip install -r requirements.txt
+
+# Install ComfyScript with dependencies
+WORKDIR /app/api/ai-apis/stable-diffusion/ComfyUI/custom_nodes/ComfyScript
+RUN pip install -e ".[default]"
+
+# Return to the main FastAPI app directory
+WORKDIR /app/api/ai-apis
+
+# Copy FastAPI application code
+COPY app/api/ai-apis/main.py .
+
+# Expose the FastAPI port
+EXPOSE 8000
+
+
+# Start FastAPI with Uvicorn
+CMD pwd && ls -la && uvicorn main:app --host 0.0.0.0 --port 8000 --reload
