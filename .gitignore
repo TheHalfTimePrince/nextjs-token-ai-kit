@@ -31,7 +31,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-stable-diffusion/ComfyUI/models
 # typescript
 *.tsbuildinfo
 next-env.d.ts
