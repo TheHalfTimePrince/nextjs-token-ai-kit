@@ -1,0 +1,25 @@
+# Ignore model files
+models/
+models/**
+
+# Ignore cache and temporary files
+.cache/
+.tmp/
+__pycache__/
+*.pyc
+
+# Ignore environment files
+.env
+*.local
+
+# Ignore node modules and build files
+node_modules/
+build/
+dist/
+
+# Ignore log files
+*.log
+
+# Ignore any other large or unnecessary files
+*.safetensors
+*.ckpt 

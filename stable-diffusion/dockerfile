@@ -1,0 +1,20 @@
+# Dockerfile for ComfyUI Internal Use
+FROM python:3.10-slim
+
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    libgl1-mesa-glx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the ComfyUI code into the container
+COPY . .
+
+# Install ComfyUI dependencies
+RUN pip install -r requirements.txt
+
+# Run ComfyUI for internal use
+EXPOSE 8188
+
+CMD python main.py --listen 0.0.0.0 --port 8188
